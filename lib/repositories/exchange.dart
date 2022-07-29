@@ -18,6 +18,7 @@ class ExchangeRepository {
       timestamp: response.data['USDBRL']['timestamp'],
       createDate: response.data['USDBRL']['create_date'],
     );
+    print(response);
     return model;
   }
 }

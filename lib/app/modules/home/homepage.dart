@@ -1,5 +1,6 @@
 import 'package:finances_control/app/models/coin.dart';
 import 'package:finances_control/app/modules/home/cubit/homepage_cubit.dart';
+import 'package:finances_control/app/modules/home/widgets/coin_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -9,7 +10,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Wallet')),
       body: BlocSelector<HomePageCubit, HomePageState, CoinModel>(
         selector: (state) {
           return state.maybeWhen(
@@ -18,9 +18,13 @@ class HomePage extends StatelessWidget {
           );
         },
         builder: (_, coin) {
-          return Container(
-            color: Colors.amber,
-            child: Center(child: Text(coin.ask.toString())),
+          return Center(
+            child: CoinCard(
+              coinLabel: 'Dólar',
+              coinPrice: double.parse(coin.ask!),
+              coinImg: 'assets/images/dollar.png',
+              variation: double.parse(coin.varBid!),
+            ),
           );
         },
       ),
