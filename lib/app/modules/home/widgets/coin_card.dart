@@ -4,13 +4,11 @@ import 'package:flutter/material.dart';
 class CoinCard extends StatelessWidget {
   final String coinLabel;
   final double coinPrice;
-  final String coinImg;
   final double variation;
   const CoinCard({
     super.key,
     required this.coinLabel,
     required this.coinPrice,
-    required this.coinImg,
     required this.variation,
   });
 
