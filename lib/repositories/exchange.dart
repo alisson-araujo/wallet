@@ -11,14 +11,13 @@ class ExchangeRepository {
       name: response.data['USDBRL']['name'],
       high: response.data['USDBRL']['high'],
       low: response.data['USDBRL']['low'],
-      varBid: response.data['USDBRL']['varBid'] ?? '',
+      varBid: response.data['USDBRL']['varBid'],
       pctChange: response.data['USDBRL']['pctChange'],
       bid: response.data['USDBRL']['bid'],
-      ask: response.data['USDBRL']['ask'] ?? '',
+      ask: response.data['USDBRL']['ask'],
       timestamp: response.data['USDBRL']['timestamp'],
       createDate: response.data['USDBRL']['create_date'],
     );
-    print(response);
     return model;
   }
 }
